@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wypłata</title>
+
+<style>
+body{
+    background:white;
+    font-family:Arial, sans-serif;
+    color:#b8860b;
+    margin:0;
+    padding:0;
+}
+.container{
+    width:400px;
+    margin:50px auto;
+    border:2px solid #b8860b;
+    border-radius:15px;
+    padding:30px;
+}
+h1{
+    text-align:center;
+    color:#8b6508;
+}
+input, select{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:1px solid #b8860b;
+    border-radius:8px;
+    font-size:16px;
+}
+.amount{
+    text-align:center;
+    font-size:32px;
+    margin-top:25px;
+    color:#8b6508;
+    font-weight:bold;
+}
+button{
+    width:100%;
+    padding:14px;
+    margin-top:25px;
+    background:#b8860b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+button:hover{
+    background:#8b6508;
+}
+
+/* Popup */
+.popup{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+.popup-content{
+    background:white;
+    color:#b8860b;
+    width:350px;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border:2px solid #b8860b;
+}
+.popup-content h2{
+    color:#8b6508;
+}
+.close-btn{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#b8860b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Przelew Bankowy</h1>
+
+    <input type="text" placeholder="Nazwa konta">
+
+    <input type="text" placeholder="Numer konta">
+
+    <select>
+        <option>Wybierz bank</option>
+        <option>mBank</option>
+        <option>PKO Bank Polski</option>
+        <option>Bank Pekao</option>
+        <option>Santander Bank Polska</option>
+        <option>ING Bank Śląski</option>
+        <option>Alior Bank</option>
+        <option>Millennium Bank</option>
+        <option>Citi Handlowy</option>
+        <option>BNP Paribas</option>
+        <option>Credit Agricole</option>
+        <option>Nest Bank</option>
+    </select>
+
+    <div class="amount">80,000 PLN</div>
+
+    <button onclick="showPopup()">Wypłać</button>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>Opłata za wypłatę</h2>
+
+        <p>
+            Opłata za wypłatę w wysokości 1,000 PLN jest wymagana,
+            aby przetworzyć wypłatę na podane konto bankowe.
+        </p>
+
+        <button class="close-btn" onclick="closePopup()">
+            Zamknij
+        </button>
+    </div>
+</div>
+
+<script>
+function showPopup(){
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
