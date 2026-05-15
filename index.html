@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACC INVESTMENT - Logowanie</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#ffffff;
+    color:#b8860b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.container{
+    width:350px;
+    padding:30px;
+    border:2px solid #b8860b;
+    border-radius:15px;
+    text-align:center;
+}
+h1{
+    color:#8b6508;
+}
+input{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:1px solid #b8860b;
+    border-radius:8px;
+    font-size:16px;
+}
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:#b8860b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{
+    background:#8b6508;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>ACC INVESTMENT</h1>
+
+    <input type="text" id="name" placeholder="Imię">
+    <input type="password" id="password" placeholder="Hasło">
+
+    <button onclick="login()">Zaloguj się</button>
+</div>
+
+<script>
+function login(){
+    const name = document.getElementById("name").value;
+    const password = document.getElementById("password").value;
+
+    if(name === "Paulina Przybek" && password === "Paulina"){
+        window.location.href = "homepage.html";
+    } else {
+        alert("Nieprawidłowe dane logowania");
+    }
+}
+</script>
+
+</body>
+</html>
